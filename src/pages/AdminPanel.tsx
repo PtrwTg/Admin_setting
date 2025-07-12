@@ -721,8 +721,8 @@ const AdminPanel = () => {
   return (
     <div className="admin-container">
       <div className="text-center mb-8">
-        <h1 className="admin-header mb-2">Thainest Admin Panel</h1>
-        <p className="text-muted-foreground">จัดการเนื้อหาของเว็บไซต์ได้อย่างง่ายดาย</p>
+        <h1 className="admin-header mb-2">Thainest Admin config</h1>
+        <p className="text-muted-foreground">PtrwTg</p>
       </div>
 
       <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
