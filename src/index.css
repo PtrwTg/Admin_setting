@@ -1,0 +1,247 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 355.7 100% 97.3%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 142.1 76.2% 36.3%;
+
+    --radius: 0.75rem;
+
+    /* Modern admin colors */
+    --success: 142.1 76.2% 36.3%;
+    --success-foreground: 0 0% 98%;
+    --warning: 47.9 95.8% 53.1%;
+    --warning-foreground: 26 83.3% 14.1%;
+    --info: 199.1 89.5% 55.9%;
+    --info-foreground: 0 0% 98%;
+
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(142.1 76.2% 26.3%));
+    --gradient-card: linear-gradient(145deg, hsl(240 10% 4.9%), hsl(240 3.7% 8.9%));
+    --gradient-border: linear-gradient(135deg, hsl(var(--border)), hsl(240 3.7% 25.9%));
+
+    /* Shadows */
+    --shadow-soft: 0 4px 6px -1px hsl(240 10% 3.9% / 0.1), 0 2px 4px -1px hsl(240 10% 3.9% / 0.06);
+    --shadow-card: 0 10px 15px -3px hsl(240 10% 3.9% / 0.3), 0 4px 6px -2px hsl(240 10% 3.9% / 0.05);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.3);
+
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 142.1 76.2% 36.3%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+  }
+
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 142.1 76.2% 36.3%;
+
+    /* Light mode gradients and shadows */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(142.1 76.2% 26.3%));
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%), hsl(210 40% 98%));
+    --gradient-border: linear-gradient(135deg, hsl(var(--border)), hsl(210 40% 88%));
+    --shadow-soft: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-card: 0 10px 15px -3px hsl(0 0% 0% / 0.1), 0 4px 6px -2px hsl(0 0% 0% / 0.05);
+    --shadow-glow: 0 0 20px hsl(var(--primary) / 0.2);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 142.1 76.2% 36.3%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 142.1 76.2% 36.3%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    background-image: radial-gradient(circle at 1px 1px, hsl(var(--muted)) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground;
+  }
+}
+
+@layer components {
+  .admin-container {
+    @apply max-w-7xl mx-auto p-6 space-y-8;
+  }
+
+  .admin-section {
+    @apply rounded-xl p-6 border bg-gradient-to-br from-card to-card/50 backdrop-blur-sm;
+    box-shadow: var(--shadow-card);
+  }
+
+  .admin-form {
+    @apply space-y-4;
+  }
+
+  .admin-input {
+    @apply w-full px-4 py-3 rounded-lg border bg-background/50 backdrop-blur-sm transition-all duration-200;
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+
+  .admin-textarea {
+    @apply w-full px-4 py-3 rounded-lg border bg-background/50 backdrop-blur-sm transition-all duration-200 resize-none;
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+
+  .admin-select {
+    @apply w-full px-4 py-3 rounded-lg border bg-background/50 backdrop-blur-sm transition-all duration-200;
+    @apply focus:ring-2 focus:ring-primary/20 focus:border-primary;
+  }
+
+  .admin-button {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 transform;
+  }
+
+  .admin-button-primary {
+    @apply admin-button bg-gradient-to-r from-primary to-primary/80 text-primary-foreground;
+    @apply hover:shadow-lg hover:shadow-primary/25;
+  }
+
+  .admin-button-secondary {
+    @apply admin-button bg-secondary text-secondary-foreground border;
+    @apply hover:bg-secondary/80;
+  }
+
+  .admin-button-danger {
+    @apply admin-button bg-destructive text-destructive-foreground;
+    @apply hover:bg-destructive/80 hover:shadow-lg hover:shadow-destructive/25;
+  }
+
+  .admin-button-success {
+    @apply admin-button bg-green-600 text-white;
+    @apply hover:bg-green-700 hover:shadow-lg hover:shadow-green-600/25;
+  }
+
+  .admin-label {
+    @apply block text-sm font-semibold mb-2 text-foreground/90;
+  }
+
+  .status-message {
+    @apply px-4 py-3 rounded-lg text-sm font-medium;
+  }
+
+  .status-success {
+    @apply status-message bg-green-100 text-green-800 border border-green-200;
+  }
+
+  .status-error {
+    @apply status-message bg-red-100 text-red-800 border border-red-200;
+  }
+
+  .slide-preview {
+    @apply flex items-start gap-6 p-6 rounded-xl border bg-gradient-to-br from-card to-muted/20;
+    @apply hover:shadow-lg transition-all duration-300;
+  }
+
+  .slide-image {
+    @apply w-32 h-32 object-contain rounded-lg border bg-background/50 backdrop-blur-sm;
+  }
+
+  .slide-controls {
+    @apply flex-1 space-y-4;
+  }
+
+  .form-row {
+    @apply flex items-center gap-4 flex-wrap;
+  }
+
+  .admin-header {
+    @apply text-3xl font-bold bg-gradient-to-r from-primary to-primary/70 bg-clip-text text-transparent;
+  }
+
+  .section-header {
+    @apply text-xl font-semibold mb-6 text-foreground/90;
+  }
+
+  .loading-spinner {
+    @apply inline-block w-6 h-6 border-2 border-primary/20 border-t-primary rounded-full animate-spin;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl;
+  }
+}
